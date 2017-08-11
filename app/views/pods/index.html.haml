@@ -1,0 +1,51 @@
+.page-header
+  = link_to new_pod_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Pod
+  %h1 Thunderpods
+.row
+  .col-sm-12
+    - @pods.each do |pod|
+      .project.col-sm-4
+        .panel.panel-default.project_box
+          .images
+            = image_tag "pod_1.png", class: "img-responsive"
+            -# - Image.for_leaf(project).limit(1).each do |image|
+            -#   = link_to project do
+            -#     = image_tag image.image.panel.url, class: "img-responsive"
+            -# - if Image.for_leaf(project).length == 0
+            -#   = link_to project do
+            -#     = image_tag "placeholder.png", class: "img-responsive"
+          .clearfix
+          .panel-body
+            .row
+              .col-sm-8
+                %i.fa.fa-cubes
+                = link_to pod, class: "pod" do
+                  = pod.title
+              .col-sm-4
+                .pull-right.small.text-muted
+                  %i.fa.fa-users
+                  = 0
+
+            .copy
+              = pod.body
+          .panel-footer
+            .btn-group
+              = link_to new_pod_path, class: 'btn btn-default' do
+                %span.glyphicon.glyphicon-download
+                Download
+              = link_to new_pod_path, class: 'btn btn-default' do
+                %span.glyphicon.glyphicon-tool
+                Build
+              = link_to new_pod_path, class: 'btn btn-default' do
+                %span.glyphicon.glyphicon-plus
+                Remix
+            %h4.bitcoin.pull-right
+              %i.fa.fa-btc
+              0.00
+            -# .members.pull-right
+            -#   - project.people.each do |user|
+            -#     = link_to user do
+            -#       = image_tag user.image_url, :size => '25x25', :alt => user.display_name
+            .clearfix

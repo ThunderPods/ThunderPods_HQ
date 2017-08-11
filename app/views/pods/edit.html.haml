@@ -1,0 +1,9 @@
+.page-header
+  = link_to pods_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to @pod, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-info-sign
+    Show
+  %h1 Editing pod
+= render 'form'

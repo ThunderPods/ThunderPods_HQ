@@ -1,0 +1,22 @@
+\%= form_for(@%= singular_table_name %&gt;, html: { class: "form-horizontal", role: "form" }) do |f| %&gt;
+\% if @%= singular_table_name %&gt;.errors.any? %&gt;
+.alert.alert-danger.alert-dismissable{role: "alert"}
+  %button.close{"data-dismiss" => "alert", type: "button"}
+    %span{"aria-hidden" => "true"}
+    %span.sr-only Close
+  %h4
+    \%= pluralize(@%= singular_table_name %&gt;.errors.count, "error") %&gt; prohibited this #{singular_table_name} from being saved:
+  %ul
+    \% @%= singular_table_name %&gt;.errors.full_messages.each do |msg| %&gt;
+    %li %= msg %&gt;
+    \% end %&gt;
+\% end %&gt;
+- attributes.each do |attribute|
+  .form-group
+    \%= f.label :%= attribute.name %&gt;, class: "col-sm-2 control-label" %&gt;
+    .col-sm-10
+      \%= f.%= attribute.field_type %&gt; :#{attribute.name}, class: "form-control" %&gt;
+.form-group
+  .col-sm-offset-2.col-sm-10
+    \%= f.submit class: "btn btn-primary" %&gt;
+\% end %&gt;

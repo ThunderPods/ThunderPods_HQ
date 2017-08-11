@@ -69,6 +69,6 @@ class PodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pod_params
-      params.require(:pod).permit(:title, :body)
+      params.require(:pod).permit(:title, :body, :image)
     end
 end

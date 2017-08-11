@@ -1,0 +1,18 @@
+.page-header
+  \%= link_to %= index_helper %&gt;_path, class: 'btn btn-default' do %&gt;
+  %span.glyphicon.glyphicon-list-alt
+  Back
+  \% end %&gt;
+  \%= link_to edit_%= singular_table_name %&gt;_path(@#{singular_table_name}), class: 'btn btn-primary' do %&gt;
+  %span.glyphicon.glyphicon-pencil
+  Edit
+  \% end %&gt;
+  %h1
+    Show #{singular_table_name}
+%dl.dl-horizontal
+  - attributes.each do |attribute|
+    %dt
+      = attribute.human_name
+      \:
+    %dd
+      \%= @%= singular_table_name %&gt;.#{attribute.name} %&gt;

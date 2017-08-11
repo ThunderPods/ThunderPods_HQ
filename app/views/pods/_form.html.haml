@@ -1,0 +1,25 @@
+= form_for(@pod, html: { class: "form-horizontal", role: "form" }) do |f|
+  - if @pod.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{"data-dismiss" => "alert", type: "button"}
+        %span{"aria-hidden" => "true"} ×
+        %span.sr-only Close
+      %h4
+        = pluralize(@pod.errors.count, "error")
+        prohibited this pod from being saved:
+      %ul
+        - @pod.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    = f.label :title, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :body, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :body, class: "form-control"
+  .form-group
+    = f.file_field :image
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit class: "btn btn-primary"

@@ -1,0 +1,26 @@
+.page-header
+  \%= link_to new_%= singular_table_name %&gt;_path, class: 'btn btn-primary' do %&gt;
+  %span.glyphicon.glyphicon-plus
+  New #{human_name}
+  \% end %&gt;
+  %h1
+    Listing #{plural_table_name}
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        - attributes.each do |attribute|
+          %th= attribute.human_name
+        %th
+        %th
+        %th
+    %tbody
+      \%= content_tag_for(:tr, @%= plural_table_name %&gt;) do |#{singular_table_name}| %&gt;
+      - attributes.each do |attribute|
+        %td
+          \%= %= singular_table_name %&gt;.#{attribute.name} %&gt;
+      %td %= link_to 'Show', %= singular_table_name %&gt; %&gt;
+      %td
+        \%= link_to 'Edit', edit_%= singular_table_name %&gt;_path(#{singular_table_name}) %&gt;
+      %td %= link_to 'Destroy', %= singular_table_name %&gt;, method: :delete, data: { confirm: 'Are you sure?' } %&gt;
+      \% end %&gt;

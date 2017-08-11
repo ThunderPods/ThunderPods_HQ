@@ -1,0 +1,13 @@
+.page-header
+  = link_to pods_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_pod_path(@pod), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show pod
+%dl.dl-horizontal
+  %dt Title:
+  %dd= @pod.title
+  %dt Body:
+  %dd= @pod.body
