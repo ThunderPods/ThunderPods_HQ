@@ -1,0 +1,2 @@
+class Pod < ApplicationRecord
+end
