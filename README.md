@@ -1,24 +1,7 @@
-# README
+![thunderpods](https://github.com/ThunderPods/Designs/blob/master/images/thunderpods.png?raw=true)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# ThunderPods HQ
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is an open source rails app to showcase Pods, allow designers to publish
+their work and for people to customise their vehicles
