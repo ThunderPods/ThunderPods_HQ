@@ -1,4 +1,4 @@
 class Pod < ApplicationRecord
 
-  mount_uploader :avatar, FileUploader
+  mount_uploader :image, FileUploader
 end

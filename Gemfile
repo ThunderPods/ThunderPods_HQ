@@ -9,11 +9,14 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
+gem 'glyphicons-rails'
 gem 'haml'
 gem 'record_tag_helper'
 
 gem 'font-awesome-rails'
 gem 'carrierwave', '~> 1.0'
+
+gem 'jquery-rails'
 
 gem 'bootstrap-generators', '~> 3.3.4'
 # Use sqlite3 as the database for Active Record

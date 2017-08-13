@@ -1,15 +1,21 @@
 .page-header
-  = link_to new_pod_path, class: 'btn btn-primary' do
+  = link_to new_pod_path, class: 'btn btn-info' do
     %span.glyphicon.glyphicon-plus
     New Pod
-  %h1 Thunderpods
+  = link_to "https://github.com/ThunderPods/Designs", class: 'btn' do
+    %span.glyphicon.glyphicon-download
+    Get Templates
+  %h1 Thunderpods - Build | Remix | Share
+
 .row
   .col-sm-12
     - @pods.each do |pod|
       .project.col-sm-4
         .panel.panel-default.project_box
           .images
-            = image_tag "pod_1.png", class: "img-responsive"
+            - if pod.image_url
+              = link_to pod, class: "pod" do
+                = image_tag pod.image.url, class: "img-responsive"
             -# - Image.for_leaf(project).limit(1).each do |image|
             -#   = link_to project do
             -#     = image_tag image.image.panel.url, class: "img-responsive"
@@ -30,20 +36,20 @@
 
             .copy
               = pod.body
-          .panel-footer
+          %div
             .btn-group
-              = link_to new_pod_path, class: 'btn btn-default' do
+              = link_to new_pod_path, class: 'btn btn-default btn-sm' do
                 %span.glyphicon.glyphicon-download
                 Download
-              = link_to new_pod_path, class: 'btn btn-default' do
+              = link_to new_pod_path, class: 'btn btn-warning btn-sm' do
                 %span.glyphicon.glyphicon-tool
                 Build
-              = link_to new_pod_path, class: 'btn btn-default' do
+              = link_to new_pod_path, class: 'btn btn-success btn-sm' do
                 %span.glyphicon.glyphicon-plus
                 Remix
-            %h4.bitcoin.pull-right
-              %i.fa.fa-btc
-              0.00
+            -# %h4.bitcoin.pull-right
+            -#   %i.fa.fa-btc
+            -#   0.00
             -# .members.pull-right
             -#   - project.people.each do |user|
             -#     = link_to user do
