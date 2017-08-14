@@ -1,29 +1,18 @@
--# .page-header
--#   = link_to pods_path, class: 'btn btn-default' do
--#     %span.glyphicon.glyphicon-list-alt
--#     Back
--#   = link_to edit_pod_path(@pod), class: 'btn btn-primary' do
--#     %span.glyphicon.glyphicon-pencil
--#     Edit
--#   %h1 Show pod
--# %dl.dl-horizontal
--#   %dt Title:
--#   %dd= @pod.title
--#   %dt Body:
--#   %dd= @pod.body
-
-
 .container
   .row.user-menu-container.square
     .col-md-12.user-details
-      .row.coralbg.white
+      .row
         .col-md-6.no-pad
           .row
             .user-pad
-              %h3
+              %h1
                 = @pod.title
-              %h4.white
+              %h4
                 = @pod.body
+          .van_placement
+            = image_tag "veto_1.png", class: "img-responsive"
+          .row
+            .user-pad
               .btn-group{ style: "bottom: 0" }
                 = link_to new_pod_path, class: 'btn btn-default' do
                   %span.glyphicon.glyphicon-download
@@ -37,10 +26,16 @@
                 = link_to edit_pod_path(@pod), class: 'btn btn-info' do
                   %i.fa.fa-pencil
                   Update
+                = link_to pod_path(@pod), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-warning' do
+                  %i.fa.fa-cross
+
+
+
 
         .col-md-6.no-pad
           .user-image
             %img.img-responsive{:src => @pod.image.url}/
+
 
   .row
     .col-md-12

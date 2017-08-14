@@ -15,6 +15,20 @@
  *= require_self
  */
 
+
+.project_box
+{
+  display: table-cell;
+  vertical-align: bottom;
+  float: none;
+  min-height: 450px;
+}
+
+.van_placement img
+{
+  opacity: 0.8;
+}
+
 h1
 {
   font-family: "Corporate A BQ Light";
@@ -253,24 +267,10 @@ div.user-menu div.user-menu-content:not(.active){
 
 }
 
+
+
  .project_box
  {
-   .panel-body
-   {
-     min-height: 106px;
-   }
-   .images
-   {
-     min-height: 130px;
-     max-height: 130px;
-     padding: 0;
-     white-space: nowrap;
-     overflow: hidden;
-     img{
-       padding: 0;
-     }
-   }
 
-   min-height: 200px;
-   overflow: hidden;
+   /*min-height: 200px;*/
  }
